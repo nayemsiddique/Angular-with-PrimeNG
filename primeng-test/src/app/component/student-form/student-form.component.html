@@ -1,0 +1,149 @@
+
+
+
+
+
+
+<!-- --------------------------------------test--------------------------------- -->
+
+<div class="ui-fluid">
+<p-table [columns]="cols" [value]="student">
+    <ng-template pTemplate="header" let-columns>
+        <tr>
+            <th *ngFor="let col of columns">
+                {{col.header}}
+            </th>
+            <th style="width:4em"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+                {{rowData[col.field]}}
+            </td>
+            <td>
+                <button pButton icon="fa fa-edit" (click)="onselectEditButton(rowData)"></button>
+                <button pButton icon="fa fa-trash" (click)="onDeleteButtonAction(rowData)"></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+
+</div>
+
+
+
+<div class="ui-fluid">
+    <div class="ui-g-12 ui-md-8">
+
+        <p-table [value]="student">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-student>
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.email}}</td>
+                    <td>{{student.phone}}</td>
+                    <td>{{student.address}}</td>
+                    <td>{{student.age}}</td>
+                    <td>{{student.gender}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+    <div class="ui-g-12 ui-md-4">
+
+        <!-- form Start -->
+        <div style="height: 80%;">
+
+            <h2 style="text-align: center;font-family: Arial, Helvetica, sans-serif;">Create User </h2>
+
+            <label for="Id">Id</label>
+            <div class="ui-inputgroup form-group">
+                <span class="ui-inputgroup-addon"><i class="fa fa-id-badge"></i></span>
+                <input type="text" [formControl]="id" id="ID" pInputText placeholder="User ID">
+            </div>
+
+            <!-- <label for="user">Password</label>
+        <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="password" pInputText pPassword />
+        </div> -->
+
+            <label for="name">User Name</label>
+            <div class="ui-inputgroup form-group">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input type="text" id="name" [formControl]="name" pInputText placeholder="User Name">
+            </div>
+
+            <label for="address">Address</label>
+            <div class="ui-inputgroup form-group">
+
+                <span class="ui-inputgroup-addon"><i class="fa fa-map-pin"></i></span>
+                <input type="text" id="address" [formControl]="address" pInputText placeholder="Address">
+            </div>
+
+            <label for="email">Email</label>
+            <div class="ui-inputgroup form-group">
+                <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                <input type="email" id="email" [formControl]="email" pInputText placeholder="Email">
+            </div>
+
+            <label for="phone">Phone Number</label>
+            <div class="ui-inputgroup form-group">
+                <span class="ui-inputgroup-addon"><i class="fa fa-phone"></i></span>
+                <input type="text" id="phone" [formControl]="phone" pInputText placeholder="Phone Number">
+            </div>
+
+            <label for="age">Age</label>
+            <div class="ui-inputgroup form-group">
+
+                <span class="ui-inputgroup-addon"><i class="fa fa-number"></i></span>
+                <input type="text" id="age" [formControl]="age" pInputText placeholder="Age">
+            </div>
+
+
+            <!-- <label for="age">Age</label>
+        <div class="ui-inputgroup form-group">
+            <span class="ui-inputgroup-addon" ><i class="fa fa-sign-language"></i></span>
+            <input type="text" #age id="age" pInputText placeholder="Age">
+        </div> -->
+
+            <label for="gender">Gender</label>
+            <div class="ui-inputgroup form-group">
+                <span class="ui-inputgroup-addon"><i class="fa fa-venus-mars"></i></span>
+                <p-dropdown [options]="types" id="gender"   [formControl]="gender" pInputText placeholder="Gender"
+                    optionLabel="value" [showClear]="true"></p-dropdown>
+            </div>
+            <div style="margin-top: 20px;">
+                <button pButton type="button" (click)="submitButtonAction()" label="Submit"
+                    class="ui-button-success"></button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
