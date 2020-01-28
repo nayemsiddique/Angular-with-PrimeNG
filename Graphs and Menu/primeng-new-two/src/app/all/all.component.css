@@ -1,0 +1,12 @@
+.menu{
+    width: 20%;
+    display: inline-flex;
+}
+.other{
+    width: 80%;
+    /* float: left; */
+}
+.all{
+    display: flex;
+    /* justify-content: space-evenly; */
+}

@@ -1,0 +1,45 @@
+<div class="ui-g">
+    <p-panel header="Hour by Project(pie) " class="ui-g-6">
+        <p-chart type="pie" [data]="dataforPie"></p-chart>
+    </p-panel>
+
+    <p-panel header="Hour by Project(doughnut)" class="ui-g-6">
+        <p-chart type="doughnut" [data]="dataforPie"></p-chart> 
+
+    </p-panel>
+</div>
+
+
+<div class="ui-g">
+    <p-panel header="Hour by Project(PolarArea Chart) " class="ui-g-6">
+    <p-chart type="polarArea" [data]="dataforPie"></p-chart>
+    </p-panel>
+
+    <p-panel header="Hour by Project(Radar Chart)" class="ui-g-6">
+        <p-chart type="radar" [data]="dataforBar"></p-chart>
+
+    </p-panel>
+</div>
+
+<div class="ui-g">
+    <p-panel header="Hour by Project(Bar Chart) " class="ui-g-6">
+        <p-chart type="bar" [data]="dataforBar"></p-chart>
+    </p-panel>
+
+    <p-panel header="Hour by Project(Line Chart)" class="ui-g-6">
+        <p-chart type="line" [data]="dataforBar"></p-chart>
+
+    </p-panel>
+</div>
+
+<!-- for mixed -->
+<div class="ui-g">
+    <p-panel header="Hour by Project(Bar and line Chart) " class="ui-g-6">
+        <p-chart type="bar" [data]="dataforMixed"></p-chart>
+    </p-panel>
+
+    <!-- <p-panel header="Hour by Project(Line Chart)" class="ui-g-6">
+        <p-chart type="line" [data]="dataforBar"></p-chart>
+
+    </p-panel> -->
+</div>
